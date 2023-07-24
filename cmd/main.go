@@ -34,6 +34,11 @@ func main() {
 		panic("Failed to connect to database")
 	}
 
+	// dbErr := db.AutoMigrate(&models.Event{})
+	// if dbErr != nil {
+	// 	panic("Failed to migrate database")
+	// }
+
 	eventRepository := repositories.NewEventRepository(db)
 
 	eventService := services.NewEventService(*eventRepository)
