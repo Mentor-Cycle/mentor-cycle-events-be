@@ -7,6 +7,8 @@ import (
 type Event struct {
 	ID           string    `gorm:"primaryKey" json:"id"`
 	MentorID     string    `gorm:"column:mentor_id" json:"mentorId"`
+	Title        string    `gorm:"column:title" json:"title"`
+	Description  string    `gorm:"column:description" json:"description"`
 	Participants []User    `gorm:"many2many:EventsOnUsers;" json:"participants"`
 	StartDate    string    `gorm:"column:start_date" json:"startDate"`
 	MeetingLink  string    `gorm:"column:meeting_link" json:"meetingLink"`
