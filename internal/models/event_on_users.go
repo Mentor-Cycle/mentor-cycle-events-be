@@ -13,7 +13,7 @@ type EventsOnUsers struct {
 	User       User      `gorm:"foreignKey:UserID"`
 	UserID     string    `gorm:"primaryKey"`
 	AssignedAt time.Time `gorm:"default:current_timestamp"`
-	AssignedBy string
+	AssignedBy *string   `gorm:"column:assigned_by default:'SYSTEM'"`
 }
 
 func (EventsOnUsers) TableName() string {

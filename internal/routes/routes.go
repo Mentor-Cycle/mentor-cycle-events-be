@@ -6,5 +6,7 @@ import (
 )
 
 func SetupRoutes(r *gin.Engine, eventHandler *handlers.EventHandler) {
-    r.GET("/events", eventHandler.FindAllEvents)
+	r.GET("/events", eventHandler.FindAllEvents)
+	r.POST("/events", eventHandler.CreateEvent)
+	r.PUT("/events/:eventId", eventHandler.AddParticipant)
 }
